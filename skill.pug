@@ -1,0 +1,17 @@
+mixin skill(skillData)
+    .skill
+        h5= skillData.title
+        div.progress= skillData.progress 
+        ol.goals
+            each x, i in skillData.goals
+                -var c
+
+                if skillData.goal_prog[i] == 0
+                    -c = "done"
+                else if skillData.goal_prog[i] == 1
+                    -c = "in progress"
+                else
+                    -c = "not started"
+
+                li= x + " " + c
+        p= skillData.content

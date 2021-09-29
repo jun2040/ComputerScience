@@ -1,0 +1,413 @@
+:root {
+    /*Dev View Color*/
+    --d1: #ffffff;
+    --d2: #e6e6e6;
+    --d3: #cccccc;
+    --d4: #b3b3b3;
+    --d5: #999999;
+    --d6: #808080;
+    --d7: #666666;
+    --d8: #4d4d4d;
+    --d9: #333333;
+    --d10: #1a1a1a;
+    --d11: #000000;
+
+    /*Color Pallete*/
+    --c1: #edf2fb;
+    --c2: #e2eafc;
+    --c3: #d7e3fc;
+
+    --anim_time: 4s;
+}
+
+* {
+    font-family: 'Fredoka One', cursive;
+    text-decoration: none;
+
+    margin: 0;
+    padding: 0;
+
+    line-height: 150%;
+
+    scroll-behavior: smooth;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 100vh auto 100px;
+    grid-template-columns: 100%;
+
+    min-width: 1200px;
+
+    background-color: var(--c1);
+}
+
+/*Header*/
+header {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+header svg {
+    position: absolute;
+    background-color: transparent;
+}
+
+header svg #t1 {
+    position: absolute;
+    fill: var(--c3);
+    z-index: 1;
+}
+
+header svg polygon.r {
+    position: absolute;
+    fill: var(--c3);
+    z-index: 2;
+}
+
+#header_svg {
+    width: 100%;
+    height: 100%;
+}
+
+header svg foreignObject {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    z-index: 2;
+}
+
+#header_text {
+    display: block;
+    text-align: center;
+    z-index: 2;
+    
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-size: 100px;
+    margin-bottom: 100px;
+    animation: var(--anim_time) linear 0s 1 slideIn;
+}
+
+header svg foreignObject #header_text a {
+    font-size: 15px;
+    color: white;
+    
+    padding: 20px 30px;
+
+    border-radius: 30px;
+    border-style: solid;
+    border-color: white;
+
+    background-color: black;
+
+    animation: var(--anim_time) linear 0s 1 fadeIn5;
+}
+
+header svg foreignObject #header_text a:hover {
+    color: black;
+    border-color: black;
+    background-color: white;
+}
+
+/*Navbar*/
+nav {
+    z-index: 2;
+    
+    position: absolute;
+    top: 500px;
+    left: 500px;
+}
+
+ul {
+    position: relative;
+    list-style-type: none;
+    transform: rotate(45deg);
+}
+
+li {
+    position: absolute;
+    width: 100px;
+}
+
+li a {
+    color: black;
+}
+
+/*List Elements Positioning & Animation*/
+#p1 {
+    top: 340px;
+    right: -20px;
+    animation: var(--anim_time) linear 0s 1 fadeIn1;
+}
+
+#p2 {
+    top: 340px;
+    right: -210px;
+    animation: var(--anim_time) linear 0s 1 fadeIn2;
+}
+
+#p3 {
+    bottom: -25px;
+    left: 300px;
+    transform: rotate(-90deg);
+    animation: var(--anim_time) linear 0s 1 fadeIn3;
+}
+
+#p4 {
+    bottom: 170px;
+    left: 300px;
+    transform: rotate(-90deg);
+    animation: var(--anim_time) linear 0s 1 fadeIn4;
+}
+
+/*Main*/
+main {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+/*Article*/
+article {    
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+
+    margin: 20px;
+    padding: 20px;
+
+    font-size: 3vw;
+}
+
+/*Section*/
+section {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 200px max-content;
+}
+
+/*Section Text Style*/
+h3 {
+    padding: 10px;
+    font-size: 2vw;
+}
+
+p {
+    width: 75%;
+    padding: 10px;
+    margin: 50px 0px;
+    font-size: 1vw;
+    text-align: left;
+}
+
+/*Section Wrappers*/
+[align="center"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section_wrapper {
+    padding: 10px;
+    margin: 10px;
+}
+
+.title_text_wrapper {
+    grid-column: 1/3;
+    grid-row: 1;
+
+    padding: 10px;
+    margin: 10px;
+}
+
+.content_text_wrapper {
+    margin: 10px;
+    padding: 10px;
+
+    min-width: 500px;
+}
+
+.content_media_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 50px;
+    padding: 10px;
+}
+
+.content_media_ratio {
+    position: relative;
+    min-width: 500px;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.content_media_none {
+    margin: 50px;
+    padding: 10px;
+    background-color: var(--c3);
+    min-width: 500px;
+    width: 100%;
+}
+
+[float="0"] .content_text_wrapper {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+[float="0"] .content_media_wrapper {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+[float="0"] p {
+    float: left;
+}
+
+[float="1"] .content_text_wrapper {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+[float="1"] .content_media_wrapper {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+[float="1"] p {
+    float: right;
+}
+
+/*Media*/
+img {
+    width: 50%;
+    margin: 10%;
+}
+
+iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+}
+
+/*Footer*/
+footer {
+    background-color: var(--c2);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*SVG Anim*/
+@keyframes slideIn {
+    0% {
+        transform: translateY(-10%);
+        opacity: 0%;
+    }
+    25% {
+        transform: translateY(0%);
+        opacity: 100%;
+    }
+}
+
+@keyframes fadeIn1 {
+    0% {
+        opacity: 0%;
+    }
+    50% {
+        opacity: 0%;
+    }
+    60% {
+        opacity: 100%;
+    }
+}
+
+@keyframes fadeIn2 {
+    0% {
+        opacity: 0%;
+    }
+    55% {
+        opacity: 0%;
+    }
+    65% {
+        opacity: 100%;
+    }
+}
+
+@keyframes fadeIn3 {
+    0% {
+        opacity: 0%;
+    }
+    60% {
+        opacity: 0%;
+    }
+    70% {
+        opacity: 100%;
+    }
+}
+
+@keyframes fadeIn4 {
+    0% {
+        opacity: 0%;
+    }
+    65% {
+        opacity: 0%;
+    }
+    75% {
+        opacity: 100%;
+    }
+}
+
+@keyframes fadeIn5 {
+    0% {
+        opacity: 0%;
+    }
+    90% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+/*SVG*/
+polygon#t1 {
+    animation: var(--anim_time) ease-out 0s 1 slideIn;
+}
+
+polygon#r1 {
+    animation: var(--anim_time) linear 0s 1 fadeIn1;
+}
+
+polygon#r2 {
+    animation: var(--anim_time) linear 0s 1 fadeIn2;
+}
+
+polygon#r3 {
+    animation: var(--anim_time) linear 0s 1 fadeIn3;
+}
+
+polygon#r4 {
+    animation: var(--anim_time) linear 0s 1 fadeIn4;
+}
+
+/*Didn't work. Instead put anim for every text element inside foreignObject*/
+/*foreignObject {
+    animation: var(--anim_time) linear 0s 1 fadeIn5;
+}*/

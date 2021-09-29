@@ -1,0 +1,97 @@
+include ../templates/article.pug
+
+doctype html
+
+html 
+    head
+        meta(charset="utf-8")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap")
+        link(rel="stylesheet" href="../style.css")
+        script(type="text/javascript" src="content.json") 
+        title Webpage
+    body 
+        header 
+            svg(width="100%" height="100%" viewbox="0 0 1000 1000")
+                polygon(points="0, 250 1000, 250 500, 750")#t1
+                polygon(points="250, 500 375, 625 250, 750 125, 625" transform="translate(0 0) translate(-20 0)").r#r1
+                polygon(points="250, 500 375, 625 250, 750 125, 625" transform="translate(125 125) translate(-10 10)").r#r2
+                polygon(points="250, 500 375, 625 250, 750 125, 625" transform="translate(375 125) translate(10 10)").r#r3
+                polygon(points="250, 500 375, 625 250, 750 125, 625" transform="translate(500 0) translate(20 0)").r#r4
+                foreignObject(width="100%" height="100%")
+                    #header_text
+                        h1 Title
+                        a(href="#main") Learn More
+                    nav 
+                        ul
+                            li#p1
+                                a(href="https://code.visualstudio.com/") Page 1
+                            li#p2
+                                a(href="https://www.blender.org/") Page 2
+                            li#p3
+                                a(href="https://stackoverflow.com/") Page 3
+                            li#p4
+                                a(href="https://github.com/") Page 4
+        main(id="main")
+            +article({
+                title: "Article 1",
+                sections: [
+                    {
+                        title: "Section 1",
+                        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu risus quis varius quam. Neque egestas congue quisque egestas diam in arcu. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Facilisis volutpat est velit egestas dui id ornare arcu. Quis enim lobortis scelerisque fermentum dui faucibus in. Tristique senectus et netus et malesuada. Sed turpis tincidunt id aliquet risus feugiat in. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum. Non sodales neque sodales ut etiam sit amet. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Ut tortor pretium viverra suspendisse. Non sodales neque sodales ut etiam sit amet nisl. Vulputate enim nulla aliquet porttitor.",
+                        embed: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png",
+                        embedT: "image"
+                    },
+                    {
+                        title: "Section 2",
+                        content: "Nulla posuere sollicitudin aliquam ultrices sagittis orci. Senectus et netus et malesuada fames ac turpis egestas. Molestie ac feugiat sed lectus. Vestibulum lectus mauris ultrices eros in cursus turpis massa. Mauris pharetra et ultrices neque ornare aenean euismod. Mattis molestie a iaculis at erat. Sed adipiscing diam donec adipiscing. Non tellus orci ac auctor augue. Porta lorem mollis aliquam ut porttitor leo a diam sollicitudin. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et. Laoreet non curabitur gravida arcu ac tortor dignissim. Morbi tempus iaculis urna id volutpat lacus laoreet. Consequat semper viverra nam libero justo laoreet sit amet cursus. Adipiscing elit ut aliquam purus sit amet luctus venenatis. In metus vulputate eu scelerisque felis imperdiet.",
+                        embed: "https://www.youtube.com/embed/kt3cEjjkCZA",
+                        embedT: "others"
+                    },
+                    {
+                        title: "Section 3",
+                        content: "Id volutpat lacus laoreet non curabitur. Nisi vitae suscipit tellus mauris a diam maecenas sed enim. Aliquet sagittis id consectetur purus ut faucibus pulvinar. Turpis massa tincidunt dui ut. Nisl nisi scelerisque eu ultrices vitae auctor eu augue ut. Feugiat in ante metus dictum. Felis donec et odio pellentesque diam volutpat commodo. Urna id volutpat lacus laoreet non curabitur. Egestas pretium aenean pharetra magna ac. Quam elementum pulvinar etiam non quam lacus suspendisse. Nisl purus in mollis nunc sed id semper risus in. Mi sit amet mauris commodo quis imperdiet. Sociis natoque penatibus et magnis dis. Sit amet volutpat consequat mauris nunc congue nisi vitae suscipit. Nunc aliquet bibendum enim facilisis gravida neque.",
+                        embed: "https://htmlcolorcodes.com/color-picker/",
+                        embedT: "others"
+                    },
+                    {
+                        title: "Section 4",
+                        content: "Sed tempus urna et pharetra pharetra massa massa ultricies. Tortor dignissim convallis aenean et. Dapibus ultrices in iaculis nunc sed augue lacus viverra. Nisl suscipit adipiscing bibendum est. Nulla pellentesque dignissim enim sit amet venenatis urna cursus. Interdum consectetur libero id faucibus nisl tincidunt eget. Id velit ut tortor pretium viverra. Ullamcorper dignissim cras tincidunt lobortis feugiat. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci a. Id volutpat lacus laoreet non curabitur gravida arcu ac. Et molestie ac feugiat sed.",
+                        embed: "https://maps.google.com/maps?q=international%20school%20yangon&t=&z=13&ie=UTF8&iwloc=&output=embed",
+                        embedT: "others"
+                    }
+                ]
+            })
+            +article({
+                title: "Article 2",
+                sections: [
+                    {
+                        title: "Section 1",
+                        content: "Sapien nec sagittis aliquam malesuada. Quisque non tellus orci ac auctor augue mauris augue neque. Sed augue lacus viverra vitae congue eu consequat ac felis. Tempor commodo ullamcorper a lacus vestibulum. Et odio pellentesque diam volutpat commodo sed egestas. Dui sapien eget mi proin. Maecenas sed enim ut sem viverra aliquet eget sit. Euismod nisi porta lorem mollis aliquam. Sit amet volutpat consequat mauris nunc congue. Aliquam sem et tortor consequat id porta nibh venenatis cras. Ullamcorper eget nulla facilisi etiam dignissim diam. Vitae tortor condimentum lacinia quis vel eros donec ac odio. Amet nisl suscipit adipiscing bibendum est ultricies integer quis. In ante metus dictum at tempor commodo ullamcorper a lacus. Eget aliquet nibh praesent tristique magna sit amet purus. Sit amet justo donec enim diam vulputate. Amet est placerat in egestas erat. Nisi quis eleifend quam adipiscing. Cras adipiscing enim eu turpis. Consectetur libero id faucibus nisl tincidunt eget nullam non.",
+                        embed: "https://download.blender.org/branding/community/blender_community_badge_orange.png",
+                        embedT: "image"
+                    },
+                    {
+                        title: "Section 2",
+                        content: "Donec ac odio tempor orci dapibus ultrices in iaculis. Massa sed elementum tempus egestas sed. Pellentesque sit amet porttitor eget dolor. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Maecenas accumsan lacus vel facilisis. Facilisis magna etiam tempor orci eu lobortis elementum. Et ultrices neque ornare aenean. Sit amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Eu facilisis sed odio morbi quis. Morbi tristique senectus et netus et malesuada fames ac. Tellus orci ac auctor augue. Odio aenean sed adipiscing diam donec adipiscing. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Dictum fusce ut placerat orci nulla pellentesque dignissim enim. Dignissim diam quis enim lobortis scelerisque fermentum dui. Lorem donec massa sapien faucibus et molestie ac feugiat sed.",
+                        embed: "https://www.youtube.com/embed/TPrnSACiTJ4",
+                        embedT: "others"
+                    },
+                    {
+                        title: "Section 3",
+                        content: "Neque vitae tempus quam pellentesque nec. Scelerisque fermentum dui faucibus in. Eget duis at tellus at urna condimentum. Vel pharetra vel turpis nunc eget. Potenti nullam ac tortor vitae purus faucibus ornare suspendisse. Porttitor massa id neque aliquam vestibulum morbi blandit cursus. Amet tellus cras adipiscing enim eu turpis egestas. Dolor sed viverra ipsum nunc aliquet bibendum enim facilisis. Justo laoreet sit amet cursus. Cum sociis natoque penatibus et magnis dis parturient montes nascetur. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu. Sed euismod nisi porta lorem mollis aliquam. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Vitae et leo duis ut diam quam nulla porttitor massa.",
+                        embed: "https://maps.google.com/maps?q=Buikslotermeerplein%20161%201025%20ET%20Amsterdam%20the%20Netherlands&t=&z=13&ie=UTF8&iwloc=&output=embed",
+                        embedT: "others"
+                    },
+                    {
+                        title: "Section 4",
+                        content: "Feugiat nibh sed pulvinar proin gravida hendrerit. Quisque sagittis purus sit amet volutpat consequat mauris. Eget mi proin sed libero enim. Ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia. Id volutpat lacus laoreet non curabitur gravida. Quis auctor elit sed vulputate mi sit amet. Faucibus pulvinar elementum integer enim neque volutpat. Vulputate eu scelerisque felis imperdiet. Venenatis tellus in metus vulputate eu. Auctor neque vitae tempus quam pellentesque nec. Ac placerat vestibulum lectus mauris ultrices eros in. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Aliquet enim tortor at auctor urna nunc. Nisl suscipit adipiscing bibendum est ultricies integer quis auctor. Dignissim enim sit amet venenatis urna cursus eget. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant morbi.",
+                        embed: "https://sketchfab.com/models/74cd5342cf59465b90f3abffe45ce361/embed",
+                        embedT: "others"
+                    }
+                ]
+            })
+        footer
+            a Copyright 2021
+

@@ -1,0 +1,28 @@
+mixin article(articleData)
+    article(style=`display: grid; grid-template-rows: 200px repeat(${articleData.sections.length}, auto);`)
+        .title_text_wrapper(align="center")
+            h2= articleData.title 
+        each x, i in articleData.sections
+            .section_wrapper(align="center" style=`grid-row: ${i + 2}`)
+                section(float= i % 2)
+                    if x.title == undefined
+                        .content_text_wrapper(align="center")
+                            p= x.content
+                    else
+                        .title_text_wrapper(align="center")
+                            h3= x.title
+                        .content_text_wrapper(align="center")
+                            p= x.content
+                    
+                    if x.embed != undefined && x.embedT != undefined
+                        .content_media_wrapper
+                            if x.embedT == "image"
+                                .content_media_none
+                                    img(src=x.embed)
+                            else if x.embedT == "video"
+                                .content_media_ratio
+                                    video
+                                        source(src=x.embed type="video/" + x.embed.split('.').pop())
+                            else if x.embedT == "others"
+                                .content_media_ratio
+                                    iframe(src=x.embed frameborder="0")
